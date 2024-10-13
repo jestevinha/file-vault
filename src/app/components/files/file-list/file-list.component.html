@@ -1,0 +1,24 @@
+<div class="sorting-container">
+  <!-- Sorting Criteria Dropdown -->
+  <mat-form-field appearance="outline">
+    <mat-label>Sort By</mat-label>
+    <mat-select [(value)]="sortBy" (selectionChange)="sortFiles()">
+      <mat-option value="name">Alphabetically</mat-option>
+      <mat-option value="size">Size</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-icon-button (click)="toggleSortOrder()" aria-label="Sort order">
+    <mat-icon>{{ sortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+  </button>
+</div>
+<div class="file-item" *ngFor="let file of sortedFiles">
+  <mat-icon class="file-icon">description</mat-icon>
+  <span class="file-name">{{ file.filename }}</span>
+  <span class="file-size">({{ file.size | fileSize }})</span>
+  <div class="action-buttons">
+    <button (click)="downloadFile(file.filename)" mat-mini-fab color="primary"><mat-icon>download</mat-icon></button>
+    <button mat-mini-fab color="warn" (click)="deleteFile(file.filename)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

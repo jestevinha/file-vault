@@ -1,0 +1,26 @@
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.file-upload-container .file-name {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button[mat-raised-button] {
+  display: flex;
+  align-items: center;
+}
+
+button[mat-mini-fab] {
+  margin-left: 10px;
+}

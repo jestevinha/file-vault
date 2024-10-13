@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Logo or App Name -->
+  <div class="app-info">
+    <span class="app-name">File-Vault</span>
+    <mat-icon>lock</mat-icon>
+  </div>
+
+  <!-- Spacer to push the user section to the right -->
+  <span class="spacer"></span>
+
+  <!-- User Name and Logoff Button -->
+  <span *ngIf="userName" class="user-info">
+    Welcome, {{ userName }}
+    <button mat-button (click)="logout()">
+      Logoff
+      <mat-icon>logout</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>
